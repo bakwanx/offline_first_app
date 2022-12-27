@@ -2,6 +2,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:offline_first_app/modules/home/models/pokemon.dart';
+import 'package:offline_first_app/modules/home/repositories/local_bca_repository.dart';
 import 'package:offline_first_app/modules/home/repositories/local_pokemon_repository.dart';
 import 'package:offline_first_app/modules/home/repositories/remote_pokemon_repository.dart';
 import 'package:offline_first_app/modules/home/views/cubit/pokemon_cubit.dart';
@@ -23,6 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     _remotePokemonRepository = RemotePokemonRepository();
     _localPokemonRepository = LocalPokemonRepository();
+
     _connectivity = Connectivity();
 
     pokemonCubit = PokemonCubit(

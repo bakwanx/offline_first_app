@@ -1,0 +1,52 @@
+[
+  {
+    "kota": "Kota Palembang",
+    "status_cabang": "KCP",
+    "kcu": "MESJID LAMA",
+    "nama_cabang": "A. Rivai",
+    "kode_cabang": "8570",
+    "wilayah_asuransi": 1,
+    "kanwil": 6,
+    "id": 1
+  },
+  {
+    "kota": "Kab. Garut",
+    "status_cabang": "KCP",
+    "kcu": "GARUT",
+    "nama_cabang": "A. Yani",
+    "kode_cabang": "0446",
+    "wilayah_asuransi": 2,
+    "kanwil": 1,
+    "id": 2
+  },
+  {
+    "kota": "Kota Surabaya",
+    "status_cabang": "KCP",
+    "kcu": "RUNGKUT",
+    "nama_cabang": "A. Yani",
+    "kode_cabang": "0429",
+    "wilayah_asuransi": 3,
+    "kanwil": 3,
+    "id": 3
+  },
+  {
+    "kota": "Kota Pekanbaru",
+    "status_cabang": "KCP",
+    "kcu": "PEKANBARU",
+    "nama_cabang": "A. Yani",
+    "kode_cabang": "0059",
+    "wilayah_asuransi": 1,
+    "kanwil": 5,
+    "id": 4
+  },
+  {
+    "kota": "Kota Banjarmasin",
+    "status_cabang": "KCP",
+    "kcu": "BANJARMASIN",
+    "nama_cabang": "A. Yani",
+    "kode_cabang": "7820",
+    "wilayah_asuransi": 3,
+    "kanwil": 11,
+    "id": 5
+  }
+]

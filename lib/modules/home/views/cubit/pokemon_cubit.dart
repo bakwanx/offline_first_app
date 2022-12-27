@@ -1,9 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:meta/meta.dart';
+import 'package:offline_first_app/modules/home/models/cabang_bca.dart';
 import 'package:offline_first_app/modules/home/models/pokemon.dart';
+import 'package:offline_first_app/modules/home/repositories/local_bca_repository.dart';
 import 'package:offline_first_app/modules/home/repositories/local_pokemon_repository.dart';
 import 'package:offline_first_app/modules/home/repositories/remote_pokemon_repository.dart';
+
+import '../../../../helpers/db_helper.dart';
 
 part 'pokemon_state.dart';
 
@@ -25,8 +29,13 @@ class PokemonCubit extends Cubit<PokemonState> {
 
   Future<void> getRemotePokemonList() async {
     try {
+      LocalBCARespository localBCARespository = LocalBCARespository();
+      localBCARespository.updateLocalCabangBCADatatable();
+
+
       emit(PokemonLoading());
-      final result = await remotePokemonRepository.getAllPokemons();
+      List<Pokemon> result = await remotePokemonRepository.getAllPokemons();
+      // updateLocalPokemonDatabase(result);
       emit(RemotePokemonLoaded(pokemonList: result));
     } catch (error) {
       emit(PokemonError());
@@ -45,12 +54,12 @@ class PokemonCubit extends Cubit<PokemonState> {
     }
   }
 
-  Future<void> updateLocalPokemonDatabase(List<Pokemon> pokemonList) async {
-    try {
-      await localPokemonRepository.updateLocalPokemonDatatable(pokemonList);
-      emit(LocalPokemonSync());
-    } catch (error) {
-      emit(PokemonError());
-    }
-  }
+  // Future<void> updateLocalPokemonDatabase(List<Pokemon> pokemonList) async {
+  //   try {
+  //     await localPokemonRepository.updateLocalPokemonDatatable(pokemonList);
+  //     emit(LocalPokemonSync());
+  //   } catch (error) {
+  //     emit(PokemonError());
+  //   }
+  // }
 }

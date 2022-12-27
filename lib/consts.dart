@@ -10,3 +10,18 @@ const String CREATE_POKEMON_TABLE = '''
 
 ''';
 
+const String CREATE_BCA_TABLE = '''
+
+    create table cabang_bca (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      kota TEXT,
+      status_cabang TEXT,
+      kcu TEXT,
+      nama_cabang TEXT,
+      kode_cabang TEXT,
+      wilayah_asuransi INTEGER,
+      kanwil INTEGER
+    )
+
+''';
+

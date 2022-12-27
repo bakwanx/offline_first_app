@@ -26,6 +26,7 @@ class DatabaseHelper {
 
   void _onCreate(Database db, int newVersion) async {
     await db.execute(CREATE_POKEMON_TABLE);
+    await db.execute(CREATE_BCA_TABLE);
   }
 
   Future close() async {

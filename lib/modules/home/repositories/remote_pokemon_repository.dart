@@ -19,8 +19,7 @@ class RemotePokemonRepository {
 
       if (response.statusCode == 200) {
         final pokemons = (response.data['results'] as List);
-        pokemonList =
-            pokemons.map((pokemon) => Pokemon.fromJson(pokemon)).toList();
+        pokemonList = pokemons.map((pokemon) => Pokemon.fromJson(pokemon)).toList();
       }
     } on DioError catch (_) {
       // return data from local DB in case of DioError
